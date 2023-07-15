@@ -1,4 +1,4 @@
-# Arch Linux
+# Guia de Instalação de Arch Linux
 Este é um guia de instalação de Arch Linux que fiz para mim mesmo do futuro, mas que pode ser usado por outras pessoas, claro.
 
 # Mudar o layout do teclado
