@@ -48,7 +48,7 @@ Enter
 ```
 
 # Sistemas de arquivos
-É necessário designar os sistemas de arquivos dos partições corretamente para garantir o funcionamento, determinamos da seguinte forma:
+É necessário designar os sistemas de arquivos dos partições corretamente para garantir o funcionamento, fazemos isso da seguinte forma:
 
 ### Sistemas de arquivos do root 
 ```
