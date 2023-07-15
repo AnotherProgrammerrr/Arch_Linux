@@ -127,7 +127,7 @@ _senha-desejada
 ```
 
 ### Permitir que o usuário execute comandos de usuário root
-Essa parte requer uma explicação, o motivo de ao adicionar o usuário termos escrito ```-G wheel``` é que queremos adicioná-lo ao grupo ```wheel``` para deixar essa etapa mais fácil, utilizando o nano, vamos abrir um arquivo e editá-lo para permitir que todos os usuários neste grupo sejam capazes de executar comandos como super usuários/ usuários root da seguinte forma:
+Essa parte requer uma explicação, o motivo de ao adicionar o usuário termos escrito ```-G wheel``` é que queremos adicioná-lo ao grupo ```wheel``` para deixar essa etapa mais fácil, utilizando o nano, vamos abrir um arquivo e editá-lo para permitir que todos os usuários neste grupo sejam capazes de executar comandos como super usuários/usuários root da seguinte forma:
 
 ```
 EDITOR=nano visudo
