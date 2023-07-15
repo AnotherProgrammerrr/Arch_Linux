@@ -68,3 +68,25 @@ mkfs.fat -F 32 /dev/sda1
 Não vou me aprofundar muito nas explicações aqui, mas essa parte é essencial e não deve ser pulada.
 
 # Montar as partições
+Essa parte é bem simples, não tem segredo algum, para root, boot e swap respectivamente, usamos os seguintes comandos:
+
+```
+mount /dev/sda3 /mnt
+mount --mkdir /dev/sda1 /mnt/boot
+swapon /dev/sda2
+```
+
+# Instalar o sistema e pacotes importantes
+Vamos instalar o sistema agora, junto dele também vamos acrescentar alguns pacotes, como o nano, que é um editor de texto, que vai ser importante em breve, o networkmanager e entre outros, vamos fazer isso através do comando:
+
+```
+pacstrap -K /mnt base linux linux-firmware base-devel grub efibootmgr nano networkmanager
+```
+
+# Entrando no sistema para toques finais
+Apesar de instalado, o sistema não está pronto para uso, nem temos um usuário ainda, então, utilizaremos os seguintes comandos para entrar no sistema e dar os toques finais:
+
+```
+genfstab -U /mnt >> /mnt/etc/fstab
+arch-chroot /mnt
+```
