@@ -83,10 +83,24 @@ Vamos instalar o sistema agora, junto dele também vamos acrescentar alguns paco
 pacstrap -K /mnt base linux linux-firmware base-devel grub efibootmgr nano networkmanager
 ```
 
-# Entrando no sistema para toques finais
+# Toques finais
 Apesar de instalado, o sistema não está pronto para uso, nem temos um usuário ainda, então, utilizaremos os seguintes comandos para entrar no sistema e dar os toques finais:
 
 ```
 genfstab -U /mnt >> /mnt/etc/fstab
 arch-chroot /mnt
+```
+
+A partir desse ponto vai ser necessário utilizar o nano algumas vezes, quando não tiver um $ na frente do comando, considere como uma linha para escrever e salvar com o nano ou outro editor de texto de sua escolha.
+
+### Ajustar o relógio
+```
+$ ln -sf /usr/share/zoneinfo/America/Sao_Paulo /etc/localtime
+$ hwclock --systohc
+```
+
+### Adicionar um hostname
+```
+$ nano /etc/hostname
+hostname
 ```
