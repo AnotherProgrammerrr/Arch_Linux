@@ -16,3 +16,15 @@ fdisk /dev/sda
 ```
 
 De acordo com as últimas instalações e pela ausência de erros resultantes do uso disso, a gente vai criar uma tabela de partições MBR, para isso, basta digitar ``` o ```.
+
+## Partição de boot
+Acredito que um tamanho adequado para uma partição de boot seja de pelo menos uns 512MB, para fazer isso utilizamos a seguinte sequência: 
+```
+n     - Para criar a nova partição
+Enter - Caso queira especificar o tipo de partição que deseja criar, escolha p para primária ou e para extendidade.
+Enter - Usar o número de partição padrão deixa esse guia muito mais fácil, então não vamos mexer nisso.
+Enter - Acredito que não há nenhum tipo de interesse em especificar o setor inicial da partição, então vamos apertar enter para pular essa parte.
++512M - Para determinar o tamanho, usamso M para mb, G para gigas e T para tera
+```
+
+## Partição swap
