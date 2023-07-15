@@ -38,7 +38,7 @@ Enter
 ```
 
 ## Partição root
-Aqui vai ficar todos os arquivos do usuário, acho interessante usar o disco inteiro, dessa forma:
+Aqui vão ficar todos os arquivos do usuário, acho interessante usar o disco inteiro, dessa forma:
 ```
 n 
 Enter
@@ -46,3 +46,25 @@ Enter
 Enter
 Enter
 ```
+
+# Sistemas de arquivos
+É necessário designar os sistemas de arquivos dos partições corretamente para garantir o funcionamento, determinamos da seguinte forma:
+
+## Sistemas de arquivos do root 
+```
+mkfs.ext4 /dev/sda3
+```
+
+## Sistema de arquivos do swap
+```
+mkswap /dev/sda2
+```
+
+## Sistema de arquivos do boot
+```
+mkfs.fat -F 32 /dev/sda1
+```
+
+Não vou me aprofundar muito nas explicações aqui, mas essa parte é essencial e não deve ser pulada.
+
+# Montar as partições
