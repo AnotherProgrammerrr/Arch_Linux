@@ -17,7 +17,7 @@ fdisk /dev/sda
 
 De acordo com as últimas instalações e pela ausência de erros resultantes do uso disso, a gente vai criar uma tabela de partições MBR, para isso, basta digitar ``` o ```.
 
-## Partição de boot
+### Partição de boot
 Acredito que um tamanho adequado para uma partição de boot seja de pelo menos uns 512MB, para fazer isso utilizamos a seguinte sequência: 
 ```
 n     - Para criar a nova partição
@@ -27,7 +27,7 @@ Enter - Como não há por que especificar o setor inicial da partição, enter p
 +512M - Isso é basicamente para determinar o tamanho, usamos M para mb, G para gigas e T para tera
 ```
 
-## Partição swap
+### Partição swap
 Até onde entendo, swap server para evitar que o sistema so morra se ficar sem RAM, para definir isso vamos fazer o seguinte:
 ```
 n 
@@ -37,7 +37,7 @@ Enter
 +2G   - Geralmente é recomendado que swap tenha o dobro de RAM que a sua máquina vai utilizar, aumente se quiser.
 ```
 
-## Partição root
+### Partição root
 Aqui vão ficar todos os arquivos do usuário, acho interessante usar o disco inteiro, dessa forma:
 ```
 n 
@@ -50,17 +50,17 @@ Enter
 # Sistemas de arquivos
 É necessário designar os sistemas de arquivos dos partições corretamente para garantir o funcionamento, determinamos da seguinte forma:
 
-## Sistemas de arquivos do root 
+### Sistemas de arquivos do root 
 ```
 mkfs.ext4 /dev/sda3
 ```
 
-## Sistema de arquivos do swap
+### Sistema de arquivos do swap
 ```
 mkswap /dev/sda2
 ```
 
-## Sistema de arquivos do boot
+### Sistema de arquivos do boot
 ```
 mkfs.fat -F 32 /dev/sda1
 ```
