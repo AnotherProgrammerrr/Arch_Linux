@@ -47,6 +47,8 @@ Enter
 Enter
 ```
 
+Após isso, escrevemos as partições com ```w```.
+
 # Sistemas de arquivos
 É necessário designar os sistemas de arquivos dos partições corretamente para garantir o funcionamento, fazemos isso da seguinte forma:
 
