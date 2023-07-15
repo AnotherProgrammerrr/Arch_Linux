@@ -91,16 +91,74 @@ genfstab -U /mnt >> /mnt/etc/fstab
 arch-chroot /mnt
 ```
 
-A partir desse ponto vai ser necessário utilizar o nano algumas vezes, quando não tiver um $ na frente do comando, considere como uma linha para escrever e salvar com o nano ou outro editor de texto de sua escolha.
+A partir desse ponto vai ser necessário utilizar o nano algumas vezes, quando houver um _ na frente de alguma informação, considere-a como uma linha editável para escrever ou usando o nano ou no terminal.
 
 ### Ajustar o relógio
 ```
-$ ln -sf /usr/share/zoneinfo/America/Sao_Paulo /etc/localtime
-$ hwclock --systohc
+ln -sf /usr/share/zoneinfo/America/Sao_Paulo /etc/localtime
+hwclock --systohc
 ```
 
 ### Adicionar um hostname
 ```
-$ nano /etc/hostname
-hostname
+nano /etc/hostname
+_hostname-desejado
 ```
+
+### Adicionar senha para o usuário root
+```
+passwd
+_senha-desejada
+_senha-desejada
+```
+
+### Adicionar usuário
+```
+useradd -m -G wheel -s /bin/bash _nome-de-usuario-desejado
+```
+
+### Adicionar senha para o usuário
+```
+passwd _nome-de-usuario-desejado 
+_senha-desejada
+_senha-desejada
+```
+
+### Permitir que o usuário execute comandos de usuário root
+Essa parte requer uma explicação, o motivo de ao adicionar o usuário termos escrito ```-G wheel``` é que queremos adicioná-lo ao grupo ```wheel``` para deixar essa etapa mais fácil, utilizando o nano, vamos abrir um arquivo e editá-lo para permitir que todos os usuários neste grupo sejam capazes de executar comandos como super usuários/ usuários root da seguinte forma:
+
+```
+EDITOR=nano visudo
+```
+
+Se necessário, substitua nano pelo outro editor de texto escolhido.
+
+Ao fazer isso, devemos descer até a parte em que estiver escrito o seguinte: 
+
+```
+##Uncomment to allow members of group wheel to execute any command
+# %wheel ALL=(ALL:ALL) ALL
+```
+
+E como se pede, vamos remover o comentário, removendo o ```#``` que está na frente de ```%wheel ALL=(ALL:ALL) ALL```, após isso, salvamos e saimos do arquivo.
+
+### Habilitar o NetworkManager
+```
+systemctl enable NetworkManager 
+```
+
+### Instalar o grub
+```
+grub-install /dev/sda
+grub-mkconfig -o /boot/grub/grub.cfg
+```
+
+### Sair e reiniciar
+```
+exit
+umount -a
+reboot 
+```
+
+# Final
+No fim, isso é tudo, após isso o sistema deve estar corretamente instalado, processos como a instalação de um DE (desktop enviroment) não serão descritos aqui, pois a intenção do arquivo era servir de guia para instalar e o sistema, não um DE.
