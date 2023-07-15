@@ -1,7 +1,7 @@
 # Arch Linux
 Este é um guia de instalação de Arch Linux que fiz para mim mesmo do futuro, mas que pode ser usado por outras pessoas, claro.
 
-# Escolher o teclado
+# Mudar o layout do teclado
 Antes de mais nada, é interessante modificar o teclado que está sendo usado, somente para evitar problemas para encontrar alguns caracteres.
 
 ```
@@ -151,6 +151,11 @@ systemctl enable NetworkManager
 ```
 grub-install /dev/sda
 grub-mkconfig -o /boot/grub/grub.cfg
+```
+
+### Modificar o layout do teclado permanentemente
+```
+localectl set-keymap br-abnt2
 ```
 
 ### Sair e reiniciar
