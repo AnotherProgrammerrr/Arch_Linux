@@ -28,7 +28,7 @@ Enter - Como não há por que especificar o setor inicial da partição, enter p
 ```
 
 ### Partição swap
-Até onde entendo, swap serve para evitar que o sistema so morra se ficar sem RAM, para definir isso vamos fazer o seguinte:
+Até onde entendo, swap serve para evitar que o sistema morra se ficar sem RAM, para definir isso vamos fazer o seguinte:
 ```
 n 
 Enter
