@@ -168,4 +168,4 @@ reboot
 ```
 
 # Final
-No fim, isso é tudo, após isso o sistema deve estar corretamente instalado, processos como a instalação de um DE (desktop enviroment) não serão descritos aqui, pois a intenção do arquivo era servir de guia para instalar e o sistema, não um DE.
+No fim, isso é tudo, após isso o sistema deve estar corretamente instalado, processos como a instalação de um DE (desktop enviroment) não foram descritos aqui, pois a intenção do arquivo era servir de guia para instalar e o sistema, não um DE.
