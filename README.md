@@ -52,7 +52,7 @@ Após isso, escrevemos as partições com ```w```.
 # Sistemas de arquivos
 É necessário designar os sistemas de arquivos dos partições corretamente para garantir o funcionamento, fazemos isso da seguinte forma:
 
-### Sistemas de arquivos do root 
+### Sistema de arquivos do root 
 ```
 mkfs.ext4 /dev/sda3
 ```
