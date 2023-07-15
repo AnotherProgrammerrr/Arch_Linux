@@ -23,8 +23,26 @@ Acredito que um tamanho adequado para uma partição de boot seja de pelo menos 
 n     - Para criar a nova partição
 Enter - Caso queira especificar o tipo de partição que deseja criar, escolha p para primária ou e para extendidade.
 Enter - Usar o número de partição padrão deixa esse guia muito mais fácil, então não vamos mexer nisso.
-Enter - Acredito que não há nenhum tipo de interesse em especificar o setor inicial da partição, então vamos apertar enter para pular essa parte.
-+512M - Para determinar o tamanho, usamso M para mb, G para gigas e T para tera
+Enter - Como não há por que especificar o setor inicial da partição, enter para usar o padrão.
++512M - Isso é basicamente para determinar o tamanho, usamos M para mb, G para gigas e T para tera
 ```
 
 ## Partição swap
+Até onde entendo, swap server para evitar que o sistema so morra se ficar sem RAM, para definir isso vamos fazer o seguinte:
+```
+n 
+Enter
+Enter
+Enter
++2G   - Geralmente é recomendado que swap tenha o dobro de RAM que a sua máquina vai utilizar, aumente se quiser.
+```
+
+## Partição root
+Aqui vai ficar todos os arquivos do usuário, acho interessante usar o disco inteiro, dessa forma:
+```
+n 
+Enter
+Enter
+Enter
+Enter
+```
