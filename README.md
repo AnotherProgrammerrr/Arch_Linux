@@ -155,16 +155,17 @@ grub-install /dev/sda
 grub-mkconfig -o /boot/grub/grub.cfg
 ```
 
-### Modificar o layout do teclado permanentemente
-```
-localectl set-keymap br-abnt2
-```
-
 ### Sair e reiniciar
 ```
 exit
 umount -a
 reboot 
+```
+
+### Modificar o layout do teclado permanentemente
+Após bootar dentro do sistema, você deve estar com o teclado no modelo estadunidense, para corrigir isso, basta digitar o seguinte:
+```
+localectl set-keymap br-abnt2
 ```
 
 # Final
