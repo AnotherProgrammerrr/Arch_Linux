@@ -74,7 +74,7 @@ Essa parte é bem simples, não tem segredo algum, para root, boot e swap respec
 
 ```
 mount /dev/sda3 /mnt
-mount --mkdir /dev/sda1 /mnt/boot
+mount --mkdir /dev/sda1 /mnt/boot/efi
 swapon /dev/sda2
 ```
 
